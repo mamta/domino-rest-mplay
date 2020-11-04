@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
@@ -10,6 +12,10 @@
 
   <artifactId>domino-rest-mplay-client</artifactId>
   <packaging>gwt-app</packaging>
+
+  <properties>
+    <generated.source.directory>${project.build.directory}/generated-sources/annotations</generated.source.directory>
+  </properties>
 
   <dependencies>
     <dependency>
@@ -31,17 +37,60 @@
       <groupId>com.google.gwt</groupId>
       <artifactId>gwt-dev</artifactId>
     </dependency>
+    <dependency>
+      <groupId>org.dominokit</groupId>
+      <artifactId>domino-rest-gwt</artifactId>
+      <version>${domino.rest.version}</version>
+      <type>gwt-lib</type>
+    </dependency>
+    <!-- Annotation processor dependency -->
+    <dependency>
+      <groupId>org.dominokit</groupId>
+      <artifactId>domino-rest-apt</artifactId>
+      <version>${domino.rest.version}</version>
+      <scope>provided</scope>
+    </dependency>
   </dependencies>
 
+  <repositories>
+    <repository>
+      <id>sonatype-snapshots-repo</id>
+      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+      <snapshots>
+        <enabled>true</enabled>
+        <updatePolicy>always</updatePolicy>
+        <checksumPolicy>fail</checksumPolicy>
+      </snapshots>
+    </repository>
+  </repositories>
   <build>
     <plugins>
       <plugin>
         <groupId>net.ltgt.gwt.maven</groupId>
         <artifactId>gwt-maven-plugin</artifactId>
         <configuration>
-          <moduleName>com.mamta.App</moduleName>
+          <moduleName>com.mamta.sl.client.App</moduleName>
           <moduleShortName>app</moduleShortName>
         </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>build-helper-maven-plugin</artifactId>
+        <version>3.0.0</version>
+        <executions>
+          <execution>
+            <id>add-source</id>
+            <phase>generate-sources</phase>
+            <goals>
+              <goal>add-source</goal>
+            </goals>
+            <configuration>
+              <sources>
+                <source>${generated.source.directory}</source>
+              </sources>
+            </configuration>
+          </execution>
+        </executions>
       </plugin>
     </plugins>
   </build>
