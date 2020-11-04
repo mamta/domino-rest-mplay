@@ -69,7 +69,7 @@
         <groupId>net.ltgt.gwt.maven</groupId>
         <artifactId>gwt-maven-plugin</artifactId>
         <configuration>
-          <moduleName>com.mamta.sl.client.App</moduleName>
+          <moduleName>com.mamta.sl.App</moduleName>
           <moduleShortName>app</moduleShortName>
         </configuration>
       </plugin>
