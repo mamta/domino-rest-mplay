@@ -5,12 +5,18 @@ import javax.ws.rs.Path;
 
 import org.dominokit.domino.rest.shared.request.service.annotations.RequestFactory;
 
+import com.mamta.sl.shared.User;
+
 @RequestFactory
-@Path("user")
+@Path("")
 public interface UserServiceClient {
 
     @GET
-    @Path("")
+    @Path("message")
     String getMessage();
+    
+    @GET
+    @Path("user")
+    User getUser();
 
 }
