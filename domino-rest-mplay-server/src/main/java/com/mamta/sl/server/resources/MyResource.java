@@ -16,9 +16,8 @@ public class MyResource {
 	@Produces(MediaType.APPLICATION_JSON)
 	public String getMessage() {
 		return "Got it!";
-		//return null;
+		// return null;
 	}
-	
 
 	@GET
 	@Path("user")
@@ -26,8 +25,11 @@ public class MyResource {
 	public Response getUser() {
 		User user = new User();
 		user.setName("Mamta");
-		
 		user = null;
-		return Response.ok().entity(user).build();
+		if (user == null) {
+			return Response.status(404).build();
+		} else {
+			return Response.ok().entity(user).build();
+		}
 	}
 }
