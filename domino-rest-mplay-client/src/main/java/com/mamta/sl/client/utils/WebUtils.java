@@ -12,7 +12,7 @@ public class WebUtils {
 
 		String webAppUrl = getHost();
 
-		String path = DomGlobal.window.location.getPathname();
+		String path = DomGlobal.window.location.pathname;
 		int index = path.lastIndexOf('/');
 
 		if (index != -1) {
@@ -29,9 +29,9 @@ public class WebUtils {
 
 	public static String getHost() {
 
-		String protocol = DomGlobal.window.location.getProtocol();
-		String port = DomGlobal.window.location.getPort();
-		String host = DomGlobal.window.location.getHostname();
+		String protocol = DomGlobal.window.location.protocol;
+		String port = DomGlobal.window.location.port;
+		String host = DomGlobal.window.location.hostname;
 
 		String portElement = port.length() > 0 ? ':' + port : "";
 		return protocol + "//" + host + portElement;

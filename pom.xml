@@ -9,7 +9,9 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <domino.rest.version>1.0-rc.4-SNAPSHOT</domino.rest.version>
+    <!-- domino.rest.version>1.0-rc.4-SNAPSHOT</domino.rest.version-->
+    <!-- domino.rest.version>1.0-alpha-gwt2.8.2-SNAPSHOT</domino.rest.version-->
+    <domino.rest.version>1.0.0-beta-2</domino.rest.version>
   </properties>
 
   <dependencyManagement>

@@ -1,6 +1,6 @@
 package com.mamta.sl.shared;
 
-import org.dominokit.jacksonapt.annotation.JSONMapper;
+import org.dominokit.jackson.annotation.JSONMapper;
 
 @JSONMapper
 public class User {

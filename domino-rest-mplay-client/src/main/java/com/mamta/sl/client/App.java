@@ -2,10 +2,10 @@ package com.mamta.sl.client;
 
 import java.util.logging.Logger;
 
-import org.dominokit.domino.rest.DominoRestConfig;
-import org.dominokit.domino.rest.shared.request.Fail;
-import org.dominokit.domino.rest.shared.request.FailedResponseBean;
-import org.dominokit.domino.rest.shared.request.Success;
+import org.dominokit.rest.DominoRestConfig;
+import org.dominokit.rest.shared.request.Fail;
+import org.dominokit.rest.shared.request.FailedResponseBean;
+import org.dominokit.rest.shared.request.Success;
 
 import com.google.gwt.core.client.EntryPoint;
 import com.mamta.sl.client.services.UserServiceClientFactory;

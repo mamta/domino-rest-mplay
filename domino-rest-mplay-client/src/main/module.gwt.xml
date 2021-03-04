@@ -2,7 +2,7 @@
 <module>
   <inherits name="com.google.gwt.user.User" />
   <inherits name="com.google.gwt.user.theme.clean.Clean" />
-  <inherits name="org.dominokit.domino.rest.GwtRest"/> 
+  <inherits name="org.dominokit.rest.Rest"/> 
 
   <source path='client' />
   <source path='shared' />
